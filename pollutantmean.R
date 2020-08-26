@@ -1,10 +1,13 @@
 pollutantmean <- function(directory, pollutant, id = 1:332) {
-  
+
+file_numbers <- vector("character", length(id))  
   for (i in id) {
     if (id[i] < 10) {
-      id <- paste("00", id[i], sep = "")
+      number <- paste("00", id[i], sep = "")
+      file_numbers[i] <- number
     } else if (id[i] >= 10 & id[i] < 100) {
-      id <- paste("0", id[i], sep = "")
+      number <- paste("0", id[i], sep = "")
+      file_numbers[i] <- number
     }
   }
   
